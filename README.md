@@ -1,7 +1,7 @@
 
 
 # VSqlite
-[![npm][download-badge]][npm] [![David][dep-badge]][dep-link]
+[![npm][download-badge]][npm] [![David][dep-badge]][dep-link]<br>
 [![NPM][large-badge]][stats-link]
 A Node package to generate ineract with sqlite without knowing any sql. Its a wrapper that allows you to not need to know any sql.
 
