@@ -14,14 +14,18 @@ const CheckVar = v => {
 	}
 }
 
+const cleanParam = p => {
+	
+}
 
 class DataBase {
-	constructor(name) {
+	constructor(name, location = "./") {
 		this.dataBase = require("sqlite");
+		this.location = location;
 		this.tables;
 	}
 	async open(n) {
-		await this.dataBase.open(`./databases/${n}.sqlite`);
+		await this.dataBase.open(this.location + `${n}.sqlite`);
 		return new Mgnt(); // This create a new instance.
 	}
 
