@@ -234,12 +234,12 @@ class Table extends Mgnt {
 	 * @memberof Table
 	 */
 	async write(n, d) {
-		await this.dataBase.run(`INSERT INTO ${this.tableName} (${cleanParam(n.join(", "))}) VALUES (${cleanParam(n.map(() => {return "?"}).join(", "))})`, cleanParam(d));
+		await this.dataBase.run(`INSERT INTO ${this.tableName} (${(n.join(", "))}) VALUES (${(n.map(() => {return "?"}).join(", "))})`, (d));
 		return this;
 	}
 
 	async delete(n) {
-		return this.dataBase.run(`DELETE  FROM ${this.tableName} WHERE ${n}`)
+		return this.dataBase.run(`DELETE  FROM ${this.tableName}${n ? " WHERE " + n : ""}`)
 	}
 	
 	async edit(clause, values){
